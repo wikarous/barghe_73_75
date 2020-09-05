@@ -172,6 +172,7 @@ FEATURES = {
 }
 
 DBC = {
+  CAR.KIA_K7: dbc_dict('hyundai_kia_generic', None),
   CAR.ELANTRA: dbc_dict('hyundai_kia_generic', None),
   CAR.GENESIS: dbc_dict('hyundai_kia_generic', None),
   CAR.KIA_OPTIMA: dbc_dict('hyundai_kia_generic', None),
