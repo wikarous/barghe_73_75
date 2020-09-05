@@ -269,12 +269,12 @@ def thermald_thread():
 
     # Show update prompt
     try:
-      last_update = datetime.datetime.fromisoformat(params.get("LastUpdateTime", encoding='utf8'))
+      last_update = now #datetime.datetime.fromisoformat(params.get("LastUpdateTime", encoding='utf8'))
     except (TypeError, ValueError):
       last_update = now
     dt = now - last_update
 
-    update_failed_count = params.get("UpdateFailedCount")
+    update_failed_count = 0 #params.get("UpdateFailedCount")
     update_failed_count = 0 if update_failed_count is None else int(update_failed_count)
 
     if dt.days > DAYS_NO_CONNECTIVITY_MAX and update_failed_count > 1:
