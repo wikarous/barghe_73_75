@@ -37,6 +37,10 @@ def create_lkas11(packer, car_fingerprint, bus, apply_steer, steer_req, cnt, ena
     values["CF_Lkas_Bca_R"] = 0
     values["CF_Lkas_HbaOpt"] = lkas11["CF_Lkas_HbaOpt"] if keep_stock else 1
     values["CF_Lkas_FcwOpt_USM"] = lkas11["CF_Lkas_FcwOpt_USM"] if keep_stock else 0
+  if car_fingerprint == [CAR.KIA_K7, CAR.KIA_K7_HEV]:
+    values["CF_Lkas_Bca_R"] = 0
+    values["CF_Lkas_FcwOpt_USM"] = 1
+    values["CF_Lkas_LdwsOpt_USM"] = 3
 
   dat = packer.make_can_msg("LKAS11", 0, values)[2]
 
