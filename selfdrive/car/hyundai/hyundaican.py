@@ -22,6 +22,10 @@ def create_lkas11(packer, frame, car_fingerprint, apply_steer, steer_req,
   if car_fingerprint in [CAR.SONATA, CAR.PALISADE, CAR.SONATA_H]:
     values["CF_Lkas_Bca_R"] = int(left_lane) + (int(right_lane) << 1)
     values["CF_Lkas_LdwsOpt_USM"] = 2
+  if car_fingerprint in [CAR.KIA_K7, CAR.KIA_K7_HEV]:
+    values["CF_Lkas_Bca_R"] = 0
+    values["CF_Lkas_FcwOpt_USM"] = 1
+    values["CF_Lkas_LdwsOpt_USM"] = 3
 
     # FcwOpt_USM 5 = Orange blinking car + lanes
     # FcwOpt_USM 4 = Orange car + lanes
